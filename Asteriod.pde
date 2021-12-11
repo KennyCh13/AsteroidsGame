@@ -4,8 +4,8 @@ class Asteriod extends Floater
   private int designK;
   public Asteriod() {
     myColor = color(255);
-    myCenterX = (int)(Math.random()*500);
-    myCenterY = (int)(Math.random()*500);
+    myCenterX = (int)(Math.random()*690);
+    myCenterY = (int)(Math.random()*690);
     myXspeed = (int)((Math.random()* 5) - 2);
     myYspeed = (int)((Math.random()* 5) - 2);
     myPointDirection = (Math.random()*360);
