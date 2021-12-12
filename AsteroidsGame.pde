@@ -6,7 +6,7 @@ ArrayList <Asteriod> asta = new ArrayList <Asteriod>();
 
 public void setup() 
 {
-  size(500, 500);
+  size(690, 690);
   for (int i = 0; i < sue.length; i++) {
     sue[i] = new Star();
   }
