@@ -6,12 +6,11 @@ class Asteriod extends Floater
     myColor = color(255);
     myCenterX = (int)(Math.random()*690);
     myCenterY = (int)(Math.random()*690);
-    myXspeed = (int)((Math.random()* 5) - 2);
-    myYspeed = (int)((Math.random()* 5) - 2);
+    myXspeed = (int)((Math.random()* 5 - 2));
+    myYspeed = (int)((Math.random()* 5 - 2));
     myPointDirection = (Math.random()*360);
-    rotSpeed = ((Math.random()*5 + 2));
+    rotSpeed = ((Math.random()*3 - 1));
     designK = (int)(Math.random()*6);
-
     if (designK == 0) {
       //Given Asteriod
       corners = 6;
@@ -226,5 +225,20 @@ class Asteriod extends Floater
   public void move() {
     super.move();
     turn(rotSpeed);
+  }
+  public float getX() {
+    return (float)myCenterX;
+  }
+  public float getY() {
+    return (float)myCenterY;
+  }
+  public float getYspeed() {
+    return (float)myYspeed;
+  }
+  public float getXspeed() {
+    return (float)myXspeed;
+  }
+  public float getPointDirection() {
+    return (float)myPointDirection;
   }
 }
