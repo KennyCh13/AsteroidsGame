@@ -1,8 +1,7 @@
 Spaceship bob = new Spaceship();
 Star[] sue = new Star[420];
-//Asteriod[] asta = new Asteriod[10];
-//Bullet[] bull = new Bullet[0];
 ArrayList <Asteriod> asta = new ArrayList <Asteriod>();
+ArrayList <Bullet> shots = new ArrayList<Bullet>();
 
 public void setup() 
 {
@@ -25,6 +24,23 @@ public void draw()
   for (int i = 0; i < asta.size(); i++) {
     asta.get(i).move();
     asta.get(i).show();
+    float d = dist (bob.getX(), bob.getY(), asta.get(i).getX(), asta.get(i).getY());
+    if (d < 30)
+      asta.remove(i);
+  }
+  for (int i = 0; i < shots.size(); i++) {
+    shots.get(i).move();
+    shots.get(i).show();
+  }
+  for (int j = 0; j <shots.size(); j++) {
+    for (int k = 0; k <asta.size(); k++) {
+      float d = dist(shots.get(j).getX(), shots.get(j).getY(), asta.get(k).getX(), asta.get(k).getY());
+      if (d < 15) {
+        asta.remove(k); 
+        shots.remove(j); 
+        break;
+      }
+    }
   }
 }
 public void keyPressed() {
@@ -46,7 +62,7 @@ public void keyPressed() {
   if (key == 'r') {
     bob.hyperSpace();
   }
-  //   if(key == ' '){
-  //  bull.add(new Bullet(bob));
-  //}
+  if (key == ' ') {
+    shots.add(new Bullet(bob));
+  }
 }
