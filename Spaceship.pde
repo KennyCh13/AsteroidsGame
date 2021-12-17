@@ -69,7 +69,7 @@ class Spaceship extends Floater
     xCorners[31] = 8;
     yCorners[31] = 5; 
     myColor = color(0, 150, 255);
-    myCenterX = myCenterY = 250;
+    myCenterX = myCenterY = 345;
     myXspeed = myYspeed = 0;
     myPointDirection = 0;
   }
@@ -78,15 +78,15 @@ class Spaceship extends Floater
     myCenterY = (int)(Math.random()*690);
     myXspeed = 0;
     myYspeed = 0;
-    myPointDirection = (int)(Math.random()*500);
+    myPointDirection = (int)(Math.random()*690);
   }
   public void brake() {
     myXspeed = .9*myXspeed;
     myYspeed = .9*myYspeed;
   }
-  //public double getX(){return myCenterX;}
-  //public double getY(){return myCenterY;}
-  //public double getPointDirection(){return myPointDirection;}
-  //public double getX(){return myXspeed;}
-  //public double getY(){return myYspeed;}
+  public float getX(){return (float)myCenterX;}
+  public float getY(){return (float)myCenterY;}
+  public float getPointDirection(){return (float)myPointDirection;}
+  public float getXspeed(){return (float)myXspeed;}
+  public float getYspeed(){return (float)myYspeed;}
 }
